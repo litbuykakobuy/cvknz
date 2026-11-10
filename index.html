@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>KakoBuy spreadsheet | Kategorier, størrelser og QC-billeder</title>
+  <meta name="description" content="Dansk guide til KakoBuy spreadsheet. Åbn 10 kategorier på FindsSpreadsheet, og lær at sammenligne størrelser, produktlinks og QC-billeder.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#f8f2e8">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="da_DK">
+  <meta property="og:title" content="KakoBuy spreadsheet | Kategorier, størrelser og QC-billeder">
+  <meta property="og:description" content="Find din kategori, og tjek mål, produktlinks og billeder før en bestilling.">
+  <!-- Google returnerede HTTP 429. De ti domæner nedenfor er fra en alternativ søgning, og Googles første side er ikke verificeret.
+       Søgeanalyse (domæne / emne): kakobuyeu.boats / kategorivalg; kakobuuy.com / produktgrupper;
+       thekakobuyspreadsheet.com / Weidian-søgning; spreadsheetkakobuy.com / købstrin og omkostninger;
+       apexkakospreadsheet.com / mærkefiltre; kakobuy.id / originale vareopslag; kakobuyspreadsheet.gg / produktlinks;
+       kakobuyqc.buzz / mål og QC; kakobuyqcphotos.com / billeddækning; kakobestsheets.com / vareudvalg og QC.
+       Sekundære søgeord: KakoBuy-guide, produktkategorier, QC-billeder, størrelsesguide til sneakers, tjek af produktlinks.
+       Longtail-emner i artikler og FAQ: finde vare efter varenummer, vælge farvevariant i vareopslag,
+       sammenligne EU-skostørrelser, måle fodlængde i centimeter, tjekke indvendig sålelængde, sneakers til brede fødder,
+       se billeder af tåboksen, vælge størrelse til oversized hættetrøje, måle brystbredde og ærmelængde,
+       sammenligne skulderbredde på T-shirts, vælge jakkestørrelse til lag, måle talje og indvendig benlængde,
+       kontrollere størrelsen på et matchende sæt, måle hovedomkreds til kasket, se nærbilleder af tryk på spillertrøjer,
+       læse QC-billeder før køb, vurdere farve i neutralt lys, tjekke syninger på produktfotos,
+       vurdere smykkelås på nærbillede, måle armbåndets indvendige omkreds, finde et udløbet produktlink,
+       sammenligne to vareopslag, beregne samlet pris ved levering til Danmark, tjekke pris for returforsendelse. -->
+  <style>
+    :root{color-scheme:light;--paper:#f8f2e8;--card:#fffaf1;--ink:#172638;--muted:#4c5560;--rust:#8d3528;--line:#cbbfb1;--peach:#efd5c8;font:100%/1.55 system-ui,sans-serif}
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink)}
+    .wrap{width:min(72rem,calc(100% - 2rem));margin-inline:auto}
+    a{color:inherit}
+    a:focus-visible,summary:focus-visible{outline:3px solid #17669a;outline-offset:4px}
+    .mast{border-bottom:1px solid var(--line)}
+    .mast .wrap,.foot .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;padding-block:.8rem}
+    .mark,.eyebrow{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+    .mark{display:inline-flex;align-items:center;gap:.55rem}
+    .mark::before{content:"";width:.75rem;height:.75rem;background:var(--rust);border-radius:50%}
+    .toplink{font-weight:750;text-underline-offset:.22em}
+    main{padding-block:1rem 3.5rem}
+    .category{background:var(--ink);color:#fff;border-radius:.85rem}
+    summary{cursor:pointer;font-weight:750}
+    .category summary{padding:.75rem 1rem}
+    .category summary:focus-visible{outline-color:#ffd39a;outline-offset:-4px}
+    .category ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr));gap:.35rem;list-style:none;margin:0;padding:0 .7rem .7rem}
+    .category a{display:flex;align-items:center;min-height:44px;padding:.35rem .6rem;border:1px solid #768293;border-radius:.45rem;text-decoration:none}
+    .category a:hover,.category a:focus-visible{background:#fff;color:var(--ink)}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1rem,4vw,3rem);align-items:center;padding-block:clamp(1.3rem,4vw,3rem)}
+    h1,h2,h3,p,figure{margin:0}
+    h1,h2,h3{line-height:1.12}
+    h1,h2{font-family:Georgia,serif}
+    h1{font-size:clamp(2.55rem,6.6vw,5.4rem);letter-spacing:-.055em;overflow-wrap:anywhere;margin-block:.45rem .8rem}
+    h2{font-size:clamp(1.8rem,3.5vw,2.9rem);letter-spacing:-.025em}
+    h3{font-size:1.2rem}
+    .eyebrow{color:var(--rust)}
+    .intro{max-width:49ch;color:var(--muted);font-size:1.06rem}
+    .cta{display:inline-flex;align-items:center;min-height:44px;padding:.55rem .9rem;border-radius:.45rem;background:var(--rust);color:#fff;font-weight:750;text-decoration:none;margin-top:1rem}
+    .cta:hover{background:#70281e}
+    .hero figure{background:#efe8df;border:1px solid var(--line);border-radius:.85rem;overflow:hidden}
+    img{display:block;width:100%;height:auto;object-fit:contain}
+    .hero img{aspect-ratio:1.3;object-fit:cover}
+    figcaption{padding:.55rem .7rem;color:var(--muted);font-size:.88rem}
+    section{margin-top:clamp(1.75rem,5vw,3.5rem)}
+    .quick{background:var(--peach);border-radius:.85rem;padding:clamp(1rem,3vw,1.6rem)}
+    .quick p,.section-note{max-width:74ch;margin-top:.55rem}
+    .section-note{color:var(--muted)}
+    .steps,.cards,.gallery{display:grid;gap:.75rem;margin-top:1rem}
+    .steps{grid-template-columns:repeat(3,1fr);padding-left:1.4rem}
+    .steps li{padding-right:.6rem}
+    .steps li::marker{color:var(--rust);font-weight:800}
+    .cards{grid-template-columns:repeat(2,1fr)}
+    article{padding:1.05rem;border-top:3px solid var(--rust);background:var(--card)}
+    article p{margin-top:.6rem}
+    .gallery{grid-template-columns:repeat(4,1fr)}
+    .gallery figure{background:var(--card);border:1px solid var(--line);border-radius:.6rem;overflow:hidden}
+    .gallery img{aspect-ratio:1;background:#eee8df}
+    .faq{max-width:52rem;margin-top:.8rem}
+    .faq details{border-bottom:1px solid var(--line)}
+    .faq summary{padding:.7rem .2rem}
+    .faq p{padding:0 .2rem .8rem}
+    .foot{border-top:1px solid var(--line);color:var(--muted)}
+    @media(max-width:45rem){.hero,.steps{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:34rem){.cards{grid-template-columns:1fr}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebPage",
+        "name":"KakoBuy spreadsheet | Kategorier, størrelser og QC-billeder",
+        "description":"Dansk guide til KakoBuy spreadsheet. Åbn 10 kategorier på FindsSpreadsheet, og lær at sammenligne størrelser, produktlinks og QC-billeder.",
+        "inLanguage":"da"
+      },
+      {
+        "@type":"FAQPage",
+        "inLanguage":"da",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"Hvad er et KakoBuy spreadsheet?",
+            "acceptedAnswer":{"@type":"Answer","text":"Det er en oversigt med produktlinks, som gør det lettere at finde og sammenligne varer på tværs af kategorier. Her fører kategorilinkene til FindsSpreadsheet."}
+          },
+          {
+            "@type":"Question",
+            "name":"Hvordan finder jeg den rigtige størrelse?",
+            "acceptedAnswer":{"@type":"Answer","text":"Mål en sko eller et stykke tøj, der passer dig, og sammenlign målene i centimeter med sælgerens tabel for den valgte variant."}
+          },
+          {
+            "@type":"Question",
+            "name":"Hvad kan QC-billeder vise?",
+            "acceptedAnswer":{"@type":"Answer","text":"De kan vise synlige detaljer som syninger, farve og mål, hvis de er fotograferet. Et QC-billede kan ikke alene dokumentere ægthed."}
+          },
+          {
+            "@type":"Question",
+            "name":"Hvad gør jeg, hvis et produktlink ikke virker?",
+            "acceptedAnswer":{"@type":"Answer","text":"Gå tilbage til kategorien, og søg efter modelnavn eller varenummer. Bekræft den ønskede variant i det nye opslag, før du bruger linket."}
+          },
+          {
+            "@type":"Question",
+            "name":"Hvordan sammenligner jeg samlet pris ved levering til Danmark?",
+            "acceptedAnswer":{"@type":"Answer","text":"Brug samme valuta for begge varer, og regn varepris, fragt og eventuelle gebyrer og importomkostninger med. Tjek beløbene hos den valgte tjeneste før betaling."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://litbuykakobuy.github.io/cvknz/">
+</head>
+<body>
+  <header class="mast">
+    <div class="wrap">
+      <span class="mark">Katalogguiden</span>
+      <a class="toplink" href="https://findsspreadsheet.net/">Til FindsSpreadsheet</a>
+    </div>
+  </header>
+  <main class="wrap">
+    <nav aria-label="Produktkategorier på FindsSpreadsheet">
+      <details class="category">
+        <summary>Vælg blandt 10 produktkategorier</summary>
+        <ul>
+          <li><a href="https://findsspreadsheet.net/category-911-Shoes.html">Sko</a></li>
+          <li><a href="https://findsspreadsheet.net/search-912/name/Shoes.html">Hættetrøjer og strik</a></li>
+          <li><a href="https://findsspreadsheet.net/search-913/name/Shoes.html">T-shirts</a></li>
+          <li><a href="https://findsspreadsheet.net/search-914/name/Shoes.html">Jakker</a></li>
+          <li><a href="https://findsspreadsheet.net/search-915/name/Shoes.html">Bukser og shorts</a></li>
+          <li><a href="https://findsspreadsheet.net/search-916/name/Shoes.html">Hovedbeklædning</a></li>
+          <li><a href="https://findsspreadsheet.net/search-917/name/Shoes.html">Sæt</a></li>
+          <li><a href="https://findsspreadsheet.net/search-918/name/Shoes.html">Undertøj</a></li>
+          <li><a href="https://findsspreadsheet.net/search-919/name/Shoes.html">Spillertrøjer</a></li>
+          <li><a href="https://findsspreadsheet.net/search-920/name/Shoes.html">Tilbehør</a></li>
+        </ul>
+      </details>
+    </nav>
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Dansk katalog- og købsguide</p>
+        <h1>KakoBuy spreadsheet</h1>
+        <p class="intro">Find kategorien for sneakers, tøj eller tilbehør på FindsSpreadsheet. Brug guiden til at sammenligne størrelser, tjekke produktlinks og vurdere billeder af den variant, du overvejer.</p>
+        <a class="cta" href="https://findsspreadsheet.net/">Åbn hovedkataloget</a>
+      </div>
+      <figure>
+        <img src="https://static.nike.com/a/images/f_auto,q_auto:eco,w_640/f888b4a3-a02a-420d-93e3-cb33c3bb30ac/AIR%2BFORCE%2B1%2B%2707.png" width="640" height="640" alt="Hvid Nike Air Force 1 ’07 sneaker set fra siden" fetchpriority="high" loading="eager" decoding="async">
+        <figcaption>Stilreference · Nike Air Force 1 ’07</figcaption>
+      </figure>
+    </div>
+    <section class="quick" aria-labelledby="start">
+      <h2 id="start">Fra kategori til produktlink</h2>
+      <p>Et KakoBuy spreadsheet samler produktlinks i en oversigt. Brug kategorien til at finde et relevant opslag, og læs derefter sælgerens oplysninger for den konkrete vare.</p>
+      <ol class="steps">
+        <li><strong>Find modellen.</strong> Notér varenummer og farvevariant, hvis de står i opslaget.</li>
+        <li><strong>Sammenlign målene.</strong> Brug centimeter og tjek, hvordan sælgeren har målt.</li>
+        <li><strong>Gennemgå detaljerne.</strong> Se efter nyere billeder af varianten, og læs leverings- og returvilkår.</li>
+      </ol>
+    </section>
+    <section aria-labelledby="guides">
+      <p class="eyebrow">Fire korte artikler</p>
+      <h2 id="guides">Det kan du tjekke før en bestilling</h2>
+      <div class="cards">
+        <article>
+          <h3>Størrelsesguide til sneakers</h3>
+          <p>Ved sammenligning af EU-skostørrelser er fodlængde i centimeter et bedre udgangspunkt end størrelsesnummeret alene. Mål begge fødder stående, og brug det længste mål i sælgerens tabel. Hvis tabellen viser indvendig sålelængde, så sammenlign med indlægssålen fra en sko, der passer dig.</p>
+          <p>Hvis du leder efter sneakers til brede fødder, så bed om forfodens indvendige bredde. Tjek billeder af tåboks, hælkappe og ydersål for den valgte model.</p>
+        </article>
+        <article>
+          <h3>Mål tøj og hovedbeklædning</h3>
+          <p>Ved valg af størrelse til en oversized hættetrøje kan du måle brystbredde og ærmelængde på en trøje, du bruger. Ved sammenligning af T-shirts er skulderbredde og ryglængde ofte mere nyttige end bogstavstørrelsen. Vælg en jakkestørrelse med plads til det lag, du vil bære under.</p>
+          <p>Tjek taljemål og indvendig benlængde for bukser og shorts. Ved køb af et matchende sæt bør du kontrollere målene på begge dele. Brug hovedomkreds i centimeter til kasketter og bøllehatte, og kig efter nærbilleder af tryk på en spillertrøje.</p>
+        </article>
+        <article>
+          <h3>Sådan læser du QC-billeder</h3>
+          <p>QC står for kvalitetskontrol. Bed om et billede af den valgte farvevariant i neutralt lys og et målebillede, hvor du kan se linealens nulpunkt. Tjek sømme ved belastede områder, og se, om billederne viser samme variant som vareopslaget.</p>
+          <p>Til smykker er nærbilleder af lås og samlinger mere nyttige end et foto af æsken. Tjek armbåndets indvendige omkreds og materialebeskrivelsen, især hvis du reagerer på bestemte metaller.</p>
+        </article>
+        <article>
+          <h3>Tjek af produktlinks og samlet pris</h3>
+          <p>Hvis et produktlink er udløbet, så søg efter modelnavn eller varenummer i samme kategori. Sammenlign to vareopslag side om side, og kontrollér, at størrelse, farve og produktbeskrivelse stadig stemmer.</p>
+          <p>Ved levering til Danmark kan du omregne til danske kroner og sammenligne varepris og fragt, eventuelle håndteringsgebyrer samt importomkostninger. Tjek også, hvem der håndterer en retur, og hvad returforsendelsen koster.</p>
+        </article>
+      </div>
+    </section>
+    <section aria-labelledby="references">
+      <h2 id="references">Stilreferencer</h2>
+      <p class="section-note">Billederne illustrerer modeller og materialer. Guiden er uafhængig af de viste mærker, og billederne dokumenterer ikke katalogets udvalg eller lagerstatus.</p>
+      <div class="gallery">
+        <figure>
+          <img src="https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1710180931/785345_XJGKJ_2420_001_100_0000_Light-cotton-jersey-t-shirt-with-gucci-print.jpg" width="490" height="490" alt="Beige Gucci T-shirt i bomuldsjersey med tryk på brystet" loading="lazy" decoding="async">
+          <figcaption>Gucci · T-shirt med tryk</figcaption>
+        </figure>
+        <figure>
+          <img src="https://en.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-lv-iconic-cap--M7050M_PM2_Front%20view.png?hei=360&amp;wid=360&amp;fmt=webp" width="360" height="360" alt="Sort Louis Vuitton LV Iconic-kasket set forfra" loading="lazy" decoding="async">
+          <figcaption>Louis Vuitton · LV Iconic-kasket</figcaption>
+        </figure>
+        <figure>
+          <img src="https://lovethatbagetc.com/cdn/shop/files/DiorNavyObliqueReversibleTeddyDSmallBrimBucketHat-2.jpg?v=1701292395&amp;width=360" width="360" height="360" alt="Marineblå og beige Dior Teddy-D-bøllehat med Oblique-mønster" loading="lazy" decoding="async">
+          <figcaption>Dior · Vendbar Teddy-D-bøllehat</figcaption>
+        </figure>
+        <figure>
+          <img src="https://www.oliverjewellery.ca/cdn/shop/files/Hermes-Palladium-Plated-Orange-Enamel-Clic-H-Bracelet-w-Box_f80dab0b.jpg?v=1744110722&amp;width=360" width="360" height="360" alt="Orange Hermès Clic H-armbånd med sølvfarvet H-lås" loading="lazy" decoding="async">
+          <figcaption>Hermès · Clic H-armbånd</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section aria-labelledby="faq">
+      <h2 id="faq">Ofte stillede spørgsmål</h2>
+      <div class="faq">
+        <details>
+          <summary>Hvad er et KakoBuy spreadsheet?</summary>
+          <p>Det er en oversigt med produktlinks, som gør det lettere at finde og sammenligne varer på tværs af kategorier. Her fører kategorilinkene til FindsSpreadsheet.</p>
+        </details>
+        <details>
+          <summary>Hvordan finder jeg den rigtige størrelse?</summary>
+          <p>Mål en sko eller et stykke tøj, der passer dig, og sammenlign målene i centimeter med sælgerens tabel for den valgte variant.</p>
+        </details>
+        <details>
+          <summary>Hvad kan QC-billeder vise?</summary>
+          <p>De kan vise synlige detaljer som syninger, farve og mål, hvis de er fotograferet. Et QC-billede kan ikke alene dokumentere ægthed.</p>
+        </details>
+        <details>
+          <summary>Hvad gør jeg, hvis et produktlink ikke virker?</summary>
+          <p>Gå tilbage til kategorien, og søg efter modelnavn eller varenummer. Bekræft den ønskede variant i det nye opslag, før du bruger linket.</p>
+        </details>
+        <details>
+          <summary>Hvordan sammenligner jeg samlet pris ved levering til Danmark?</summary>
+          <p>Brug samme valuta for begge varer, og regn varepris, fragt og eventuelle gebyrer og importomkostninger med. Tjek beløbene hos den valgte tjeneste før betaling.</p>
+        </details>
+      </div>
+      <a class="cta" href="https://findsspreadsheet.net/">Fortsæt til FindsSpreadsheet</a>
+    </section>
+  </main>
+  <footer class="foot">
+    <div class="wrap"><span>Katalogguiden · Dansk vejledning</span></div>
+  </footer>
+</body>
+</html>
